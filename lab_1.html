@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('C:/Users/André Marques/Desktop/UFABC/Sinais Multimidia/Site/Capa.png');
+            background-size: cover;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #3a9793; 
+            padding: 20px;
+            box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .logo {
+            width: 100px;
+            margin-left: -50px;
+        }
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+        .menu-item {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+        }
+        .menu-item:hover {
+            color: #006400;
+        }
+        .footer {
+            position: fixed; 
+            bottom: 0; 
+            width: 100%; 
+            justify-content: center; 
+            background-color: #3a9793; 
+            text-align: center; 
+            color: white; 
+        }
+        .audio-player {
+            position: absolute; 
+            top: 150px; 
+            right: 20px; 
+        }
+        .title {
+           text-align:center; 
+           margin-top :20px; 
+           color:white; 
+       }
+       .section {
+           margin :20px; 
+           color:white; 
+       }
+       /* Estilos para o menu suspenso */
+       .dropdown {
+           position:relative; 
+           display:inline-block; 
+       }
+       .dropdown-content {
+           display:none; 
+           position:absolute; 
+           min-width :160px; 
+           box-shadow :0px 8px 16px 0px rgba(0,0,0,0.2); 
+           z-index :1; 
+           background-color :#3a9793; /* Cor de fundo igual ao do header */
+       }
+       .dropdown-content a {
+           color:white; /* Cor da fonte branca */
+           padding :12px 16px; 
+           text-decoration :none; 
+           display:block; 
+       }
+       .dropdown-content a:hover {
+           color :#006400; /* Cor verde escuro quando o cursor passa por cima */
+       }
+       .dropdown:hover .dropdown-content {
+           display:block; 
+       }
+       /* Estilo para o parágrafo com texto normal */
+       .normal-text {
+           text-transform:none; /* Remove a transformação de texto em maiúsculas */
+       }
+    </style>
+    <title>LAB 1</title>
+    <link rel="icon" href="C:\Users\André Marques\Desktop\UFABC\Sinais Multimidia\Site\ufabc_logo.png">
+</head>
+<body>
+    <div class="header">
+        <img src="C:\Users\André Marques\Desktop\UFABC\Sinais Multimidia\Site\ufabc_logo.png" alt="Logo UFABC" class="logo">
+        <div class="menu">
+           <a href="home.html" class="menu-item">Home</a>
+           <a href="projeto.html" class="menu-item">Projeto</a>
+           <div class="dropdown">
+               <a class="menu-item">Laboratórios</a>
+               <div class="dropdown-content">
+                   <a href="lab_1.html">Lab 1</a>
+                   <a href="#">Lab 2</a>
+                   <a href="#">Lab 3</a>
+                   <a href="#">Lab 4</a>
+                   <a href="#">Lab 5</a>
+                   <a href="#">Lab 6</a>
+               </div>
+           </div>
+           <a href="quem_somos.html" class="menu-item">Quem Somos</a>
+       </div>
+   </div>
+   <div class="audio-player">
+       <audio controls>
+           <source src="audio-description.mp3" type="audio/mpeg">
+               Seu navegador não suporta o elemento de áudio.
+       </audio>
+   </div>
+   <h1 class="title">LAB 1</h1> 
+
+   <div class="section">
+       <h2>André Marques</h2>
+
+       
+       <!-- Adicionada a classe 'normal-text' ao parágrafo -->
+       <p class="normal-text">Este é um texto sobre 'Codificação de Sinais Multimídia'. Você pode substituir este texto conforme necessário.</p>
+
+
+   </div>
+
+   <div class="footer">
+       <p>Todos os direitos reservados</p>
+   </div>
+</body>
+</html>
