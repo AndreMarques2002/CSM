@@ -5,9 +5,13 @@
     <style>
         .WebContainer{
             width:100%;
-            min-width:1000px;
+            min-width:300px;
             height:auto;
         }
+        @media screen and (max-width: 600px) {
+            .WebContainer {
+                min-width: 100px; /* Ajuste conforme necessário */
+            }
         body {
             font-family: Arial, sans-serif;
             background-image: url('https://raw.githubusercontent.com/AndreMarques2002/CSM/main/Capa.png');
@@ -119,14 +123,16 @@
     }
 
     .info-box {
+        margin-left: 10px; /* Ajuste conforme necessário */
+        width: calc(100% - 20px);
         border-radius :25px;
         border-color:#3a9793;
         border-width :2px;
         border-style:solid ;
-        width :800px ;
+        /*width :800px ;*/
         height:auto;
         padding :10px ;
-        margin-left :300px ;
+        /*margin-left :300px ;*/
         margin-top :-260px ;
     }
 
