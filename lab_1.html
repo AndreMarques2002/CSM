@@ -2,34 +2,6 @@
 <html>
 <head>
     <style>
-        /* Estilo para o fundo escurecido */
-        .bg-modal {
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            position: absolute;
-            top: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            display: none; /* Inicialmente escondido */
-        }
-
-        /* Estilo para a imagem ampliada */
-        .modal-content {
-            width: 500px;
-            height: 300px;
-        }
-
-        /* Estilo para o botão de fechar */
-        .close {
-            position: absolute;
-            top: 0;
-            right: 10px;
-            font-size: 42px;
-            transform: rotate(45deg);
-            cursor: pointer;
-        }
         body {
             font-family: Arial, sans-serif;
             background-image: url('https://raw.githubusercontent.com/AndreMarques2002/CSM/main/Capa.png');
@@ -191,69 +163,7 @@
            </div>
     </div>
 
-
-
-
-     <div id="myModal" class="bg-modal">
-        <div class="modal-content">
-            <div class="close">+</div>
-            <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/Andre.JPG" alt="Foto de André Marques da Silva">
-        </div>
-    </div>
-
-    <script>
-        // Obtém o modal
-        var modal = document.getElementById("myModal");
-
-        // Obtém a imagem e insere-a dentro do modal
-        var img = document.getElementById("myImg");
-        var modalImg = document.getElementById("img01");
-        img.onclick = function(){
-          modal.style.display = "block";
-          modalImg.src = this.src;
-        }
-
-        // Obtém o elemento <span> que fecha o modal
-        var span = document.getElementsByClassName("close")[0];
-
-        // Quando o usuário clica em <span> (x), fecha o modal
-        span.onclick = function() { 
-          modal.style.display = "none";
-        }
-  </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       
-              <div style="display: flex; justify-content: space-between;">
+       <div style="display: flex; justify-content: space-between;">
            <div style="text-align: center;">
                <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/Andre.JPG" alt="Foto de André Marques da Silva" alt="circle image" class="circle-img">
                     <p>Smartphone</p>
