@@ -127,12 +127,35 @@
            <h3>André Marques da Silva</h3>
 
            <a href="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/Teste_Audicao_Andre_Marques.pdf" target="_blank">
-               <button style="width: 200px; height: 50px; border-radius: 12px; color: white; background-color: #3a9793;">Percepção Auditiva</button>
+               <button style="width: 200px; height: 50px; border-radius: 20px; color: white; background-color: #3a9793;">Percepção Auditiva</button>
            </a>
            
            <a href="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/Teste_Visao_Andre_Marques.pdf" target="_blank">
-               <button style="width: 200px; height: 50px; border-radius: 12px; color: white; background-color: #3a9793;">Acuidade Visual</button>
+               <button style="width: 200px; height: 50px; border-radius: 20px; color: white; background-color: #3a9793;">Acuidade Visual</button>
            </a>
+
+
+<button onclick="openPDF('https://raw.githubusercontent.com/AndreMarques2002/CSM/main/Teste_Audicao_Andre_Marques.pdf')">Abrir PDF 2</button>
+
+<iframe id="pdfViewer" style="width:600px; height:500px;" src=""></iframe>
+
+<script>
+function openPDF(path) {
+    document.getElementById('pdfViewer').src = path;
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
        
            <h4><li>Teste de Audiometria</h4><ul>
                <li><p class="normal-text">Na primeira parte do teste, realizada com fone de ouvido (Jabra Evolve 30 II), os resultados apontaram audição normal e perda leve em ambos os ouvidos. O ouvido 
