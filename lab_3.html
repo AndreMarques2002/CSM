@@ -11,10 +11,16 @@
             margin: 0;
             padding: 0;
         }
+
         .audio-player {
             display: inline-block;
             margin-right: 10px;
         }
+        .audio-container {
+            display: flex;
+            gap: 10px;
+        }
+        
         .image-container {
             display: flex;
             justify-content: center;
@@ -160,18 +166,22 @@
        
        <h2>Resultados e Análises</h2>
            <h3>André Marques da Silva</h3>
+               
+           <div class="audio-container">
                <div class="audio-player">
-                <audio controls>
-                    <source src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/AndreMarquesDaSilva.wav" type="audio/ogg">
-                </audio>
-                    <p>André Marques da Silva</p>
-               </div>
-               <div class="audio-player">
+                   <audio controls>
+                       <source src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/AndreMarquesDaSilva.wav" type="audio/ogg">
+                   </audio>
+                   <p>André Marques da Silva</p>
+                </div>
+            <div class="audio-player">
                 <audio controls>
                     <source src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/RA11202021067.wav" type="audio/ogg">
                 </audio>
-                    <p>11202021067</p>
+                <p>11202021067</p>
                 </div>
+            </div>
+
            <h3>Guilherme Nido de Aveiro</h3>
                 <audio controls>
                     <source src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/GuilhermeNidoDeAveiro.wav" type="audio/ogg">
