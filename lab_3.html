@@ -11,7 +11,13 @@
             margin: 0;
             padding: 0;
         }
-
+        .audio-container {
+            display: flex; /* Exibe os elementos em uma linha horizontal */
+            justify-content: space-between; /* Adiciona espaço entre os elementos */
+        }
+        audio {
+            margin-right: 10px;
+        }
         .image-container {
             display: flex;
             justify-content: center;
@@ -157,6 +163,7 @@
        
        <h2>Resultados e Análises</h2>
            <h3>André Marques da Silva</h3>
+           <div class="audio-container">
                 <audio controls>
                     <source src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/AndreMarquesDaSilva.wav" type="audio/ogg">
                 </audio>
@@ -165,7 +172,8 @@
                     <source src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/RA11202021067.wav" type="audio/ogg">
                 </audio>
                     <p>11202021067</p>
-       
+           </div>
+           
            <h3>Guilherme Nido de Aveiro</h3>
                 <audio controls>
                     <source src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/GuilhermeNidoDeAveiro.wav" type="audio/ogg">
@@ -236,7 +244,7 @@
                <br>
 
                <audio controls>
-                    <source src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/Camoes_GuilhermeNidoDeAveiro.wav" type="audio/ogg">
+                    <source src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/Camoes_capacitivo.wav" type="audio/ogg">
                 </audio>
                     <p>Capacitivo</p>
                <div class="image-container">
