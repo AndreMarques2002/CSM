@@ -11,6 +11,17 @@
             margin: 0;
             padding: 0;
         }
+
+        .image-container {
+            display: flex; /* Exibe os elementos filhos em uma linha horizontal */
+        }
+
+        .image-container img {
+            width: 50%; /* Define o tamanho das imagens (50% do contêiner) */
+            height: auto; /* Mantém a proporção original da imagem */
+        }
+
+        
         .header {
             position: sticky;
             top: 0;
@@ -147,19 +158,17 @@
                 <audio controls>
                     <source src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/AndreMarquesDaSilva.wav" type="audio/ogg">
                 </audio>
-                    <div style="display: flex; justify-content: space-between;">
-                        <div style="text-align: center;">
-                        <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/Frase1_capacitivo.png" alt="Logo UFABC" class="logo">
-                        </div>
-                        <div style="text-align: center;">
-                        <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/potencia1_capacitivo.png" alt="Logo UFABC" class="logo">
-                        </div>
-                    </div>
-                    
                 <audio controls>
                     <source src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/RA11202021067.wav" type="audio/ogg">
                     Seu navegador não suporta o elemento de áudio.
                 </audio>
+       
+               <div class="image-container">
+                   <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/Frase1_capacitivo.png" alt="Imagem 1">
+                   <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/potencia1_capacitivo.png" alt="Imagem 2">
+               </div>
+                    
+                
                 <p class="normal-text" style="text-indent:10em">André Marques da Silva RA: 11202021067</p>
            <h3>Guilherme Nido de Aveiro</h3>
                 <audio controls>
