@@ -16,12 +16,42 @@
             overflow: hidden;
             position: relative;
         }
+
         .slide {
             display: none;
         }
+
         img {
             width: 100%;
             height: auto;
+        }
+
+        .controls {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+        }
+
+        .control-button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .indicators {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: gray;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
         }
         .header {
             position: sticky;
@@ -137,41 +167,69 @@
 
 
            <div class="slider">
-               <div class="slide">
-                   <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/evento_1.jpg" alt="Imagem 1">
-               </div>
-               <div class="slide">
-                   <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/evento_2.jpg" alt="Imagem 2">
-               </div>
-               <div class="slide">
-                   <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/evento_3.jpg" alt="Imagem 3">
-               </div>
-               <div class="slide">
-                   <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/evento_4.jpg" alt="Imagem 4">
-               </div>
-           </div>
-           <script>
-               const slides = document.querySelectorAll('.slide');
-               let currentSlide = 0;
-               function showSlide(index){
-                   slides.forEach((slide, i) =>{
-                       if(i=== index){
-                           slide.style.display = 'block';
-                       } 
-                       else{
-                           slide.style.display = 'none';
-                       }
-                    });
-               }
-               function nextSlide() {
-                   currentSlide = (currentSlide + 1) % slides.length;
-                   showSlide(currentSlide);
-               }
-               // Inicialização do slider
-               showSlide(currentSlide);
-               // Avança para o próximo slide a cada 5 segundos
-               setInterval(nextSlide, 5000);
-           </script>
+        <div class="slide">
+            <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/evento_1.jpg" alt="Imagem 1">
+        </div>
+        <div class="slide">
+            <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/evento_2.jpg" alt="Imagem 2">
+        </div>
+        <div class="slide">
+            <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/evento_3.jpg" alt="Imagem 3">
+        </div>
+        <div class="slide">
+            <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/evento_4.jpg" alt="Imagem 4">
+        </div>
+        <div class="controls">
+            <button class="control-button" id="prevSlide">&lt;</button>
+            <button class="control-button" id="nextSlide">&gt;</button>
+        </div>
+        <div class="indicators">
+            <span class="indicator"></span>
+            <span class="indicator"></span>
+            <span class="indicator"></span>
+            <span class="indicator"></span>
+        </div>
+    </div>
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const indicators = document.querySelectorAll('.indicator');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.style.display = 'block';
+                } else {
+                    slide.style.display = 'none';
+                }
+            });
+
+            indicators.forEach((indicator, i) => {
+                if (i === index) {
+                    indicator.style.background = 'green';
+                } else {
+                    indicator.style.background = 'gray';
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Inicialização do slider
+        showSlide(currentSlide);
+
+        // Avança para o próximo slide quando o botão é clicado
+        document.getElementById('nextSlide').addEventListener('click', nextSlide);
+        document.getElementById('prevSlide').addEventListener('click', prevSlide);
+    </script>
 
 
 
