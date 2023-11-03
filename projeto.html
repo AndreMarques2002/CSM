@@ -26,19 +26,6 @@
             height: auto;
         }
 
-        .controls {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-        }
-
-        .control-button {
-            background: transparent;
-            border: none;
-            cursor: pointer;
-        }
-
         .indicators {
             text-align: center;
             margin-top: 20px;
@@ -166,7 +153,7 @@
        <h2>Jogo da Memória Interdisciplinar</h2>
 
 
-           <div class="slider">
+          <div class="slider">
         <div class="slide">
             <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/evento_1.jpg" alt="Imagem 1">
         </div>
@@ -178,10 +165,6 @@
         </div>
         <div class="slide">
             <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/evento_4.jpg" alt="Imagem 4">
-        </div>
-        <div class="controls">
-            <button class="control-button" id="prevSlide">&lt;</button>
-            <button class="control-button" id="nextSlide">&gt;</button>
         </div>
         <div class="indicators">
             <span class="indicator"></span>
@@ -213,25 +196,41 @@
             });
         }
 
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
+        function goToSlide(index) {
+            currentSlide = index;
             showSlide(currentSlide);
         }
 
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
             showSlide(currentSlide);
         }
 
         // Inicialização do slider
         showSlide(currentSlide);
 
-        // Avança para o próximo slide quando o botão é clicado
-        document.getElementById('nextSlide').addEventListener('click', nextSlide);
-        document.getElementById('prevSlide').addEventListener('click', prevSlide);
+        // Avança para o próximo slide automaticamente a cada 8 segundos
+        setInterval(nextSlide, 8000);
+
+        // Avança para o próximo slide quando um indicador é clicado
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                goToSlide(index);
+            });
+        });
     </script>
 
 
+
+
+
+
+
+
+
+
+
+       
 
        
 
