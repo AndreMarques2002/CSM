@@ -11,6 +11,18 @@
             margin: 0;
             padding: 0;
         }
+        .slider {
+            width: 500px;
+            overflow: hidden;
+            position: relative;
+        }
+        .slide {
+            display: none;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
         .header {
             position: sticky;
             top: 0;
@@ -121,10 +133,54 @@
    <h1 class="title">PROJETO</h1> 
 
    <div class="section">
-       <h2>Jogo da emoóriainterdisciplinar</h2>
+       <h2>Jogo da Memória Interdisciplinar</h2>
 
+
+           <div class="slider">
+               <div class="slide">
+                   <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/evento_1.jpg" alt="Imagem 1">
+               </div>
+               <div class="slide">
+                   <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/evento_2.jpg" alt="Imagem 2">
+               </div>
+               <div class="slide">
+                   <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/evento_3.jpg" alt="Imagem 3">
+               </div>
+               <div class="slide">
+                   <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/evento_4.jpg" alt="Imagem 4">
+               </div>
+           </div>
+           <script>
+               const slides = document.querySelectorAll('.slide');
+               let currentSlide = 0;
+               function showSlide(index){
+                   slides.forEach((slide, i) =>{
+                       if(i=== index){
+                           slide.style.display = 'block';
+                       } 
+                       else{
+                           slide.style.display = 'none';
+                       }
+                    });
+               }
+               function nextSlide() {
+                   currentSlide = (currentSlide + 1) % slides.length;
+                   showSlide(currentSlide);
+               }
+               // Inicialização do slider
+               showSlide(currentSlide);
+               // Avança para o próximo slide a cada 5 segundos
+               setInterval(nextSlide, 5000);
+           </script>
+
+
+
+       
+
+
+       
        <h3>Objetivos</h3>
-       <p class="normal-text"><b>Experienciar a lucidade, a percepção, a expressividade</b> e a imaginação, ressignificando espaços da escola e de fora dela no âmbiro da Arte.</p>
+       <p class="normal-text">Experienciar a lucidade, a percepção, a expressividade e a imaginação, ressignificando espaços da escola e de fora dela no âmbiro da Arte.</p>
        
        <h3>Tecnologias utilizadas</h3>
            <li>HTML</li>
