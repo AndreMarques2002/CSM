@@ -11,6 +11,16 @@
             margin: 0;
             padding: 0;
         }
+        .image-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .image-container img {
+            width: 40%;
+            height: auto;
+            margin: 0 10px;
+        }
         .slider {
             width: 500px;
             overflow: hidden;
@@ -152,73 +162,76 @@
    <div class="section">
        <h2>Jogo da Memória Interdisciplinar</h2>
 
+       <div class="image-container">
+           <div class="slider">
+               <div class="slide">
+                   <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/evento_1.jpg" alt="Imagem 1">
+               </div>
+               <div class="slide">
+                   <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/evento_2.jpg" alt="Imagem 2">
+               </div>
+               <div class="slide">
+                   <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/evento_3.jpg" alt="Imagem 3">
+               </div>
+               <div class="slide">
+                   <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/evento_4.jpg" alt="Imagem 4">
+               </div>
+               <div class="indicators">
+                   <span class="indicator"></span>
+                   <span class="indicator"></span>
+                   <span class="indicator"></span>
+                   <span class="indicator"></span>
+               </div>
+           </div>
+       </div>
+       <script>
+       const slides = document.querySelectorAll('.slide');
+       const indicators = document.querySelectorAll('.indicator');
+       let currentSlide = 0;
 
-          <div class="slider">
-        <div class="slide">
-            <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/evento_1.jpg" alt="Imagem 1">
-        </div>
-        <div class="slide">
-            <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/evento_2.jpg" alt="Imagem 2">
-        </div>
-        <div class="slide">
-            <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/evento_3.jpg" alt="Imagem 3">
-        </div>
-        <div class="slide">
-            <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/evento_4.jpg" alt="Imagem 4">
-        </div>
-        <div class="indicators">
-            <span class="indicator"></span>
-            <span class="indicator"></span>
-            <span class="indicator"></span>
-            <span class="indicator"></span>
-        </div>
-    </div>
-    <script>
-        const slides = document.querySelectorAll('.slide');
-        const indicators = document.querySelectorAll('.indicator');
-        let currentSlide = 0;
-
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                if (i === index) {
-                    slide.style.display = 'block';
-                } else {
-                    slide.style.display = 'none';
+       function showSlide(index) {
+           slides.forEach((slide, i) => {
+               if(i === index){
+                   slide.style.display = 'block';
+               } 
+               else{
+                   slide.style.display = 'none';
                 }
             });
 
-            indicators.forEach((indicator, i) => {
-                if (i === index) {
-                    indicator.style.background = 'green';
-                } else {
-                    indicator.style.background = 'gray';
+           indicators.forEach((indicator, i) => {
+               if (i === index) {
+                   indicator.style.background = '#3a9793';
+               } 
+               else{
+                   indicator.style.background = 'gray';
                 }
             });
-        }
+       }
 
-        function goToSlide(index) {
-            currentSlide = index;
-            showSlide(currentSlide);
-        }
+       function goToSlide(index){
+           currentSlide = index;
+           showSlide(currentSlide);
+       }
 
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }
+       function nextSlide(){
+       currentSlide = (currentSlide + 1) % slides.length;
+       showSlide(currentSlide);
+       }
 
-        // Inicialização do slider
-        showSlide(currentSlide);
+       // Inicialização do slider
+       showSlide(currentSlide);
 
-        // Avança para o próximo slide automaticamente a cada 8 segundos
-        setInterval(nextSlide, 8000);
+       // Avança para o próximo slide automaticamente a cada 8 segundos
+       setInterval(nextSlide, 8000);
 
-        // Avança para o próximo slide quando um indicador é clicado
-        indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', () => {
-                goToSlide(index);
+       // Avança para o próximo slide quando um indicador é clicado
+       indicators.forEach((indicator, index) =>{
+           indicator.addEventListener('click', () =>{
+               goToSlide(index);
             });
         });
-    </script>
+       </script>
 
 
 
