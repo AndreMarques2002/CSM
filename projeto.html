@@ -158,10 +158,12 @@
        </audio>
    </div>
    <h1 class="title">PROJETO</h1> 
-
+   
    <div class="section">
        <h2>Jogo da Memória Interdisciplinar</h2>
-
+       
+       <h3>REGISTROS DA APRESENTAÇÃO</h3>
+       
        <div class="image-container">
            <div class="slider">
                <div class="slide">
@@ -218,14 +220,10 @@
        currentSlide = (currentSlide + 1) % slides.length;
        showSlide(currentSlide);
        }
-
-       // Inicialização do slider
+       
        showSlide(currentSlide);
+       setInterval(nextSlide, 4000);
 
-       // Avança para o próximo slide automaticamente a cada 8 segundos
-       setInterval(nextSlide, 5000);
-
-       // Avança para o próximo slide quando um indicador é clicado
        indicators.forEach((indicator, index) =>{
            indicator.addEventListener('click', () =>{
                goToSlide(index);
@@ -233,35 +231,19 @@
         });
        </script>
 
-
-
-
-
-
-
-
-
-
-
-       
-
-       
-
-
        
        <h3>Objetivos</h3>
-       <p class="normal-text">Experienciar a lucidade, a percepção, a expressividade e a imaginação, ressignificando espaços da escola e de fora dela no âmbiro da Arte.</p>
+       <p class="normal-text">Seguindos as diretrizes da BNCC (Base Nacional Comum Curricular), o presente projeto tem como objetivo 'Experienciar a lucidade, a percepção, 
+           a expressividade e a imaginação, ressignificando espaços da escola e de fora dela no âmbito da Arte'.</p>
        
        <h3>Tecnologias utilizadas</h3>
            <li>HTML</li>
            <li>CSS</li>
            <li>JavaScript</li>
            
-       <h3>Registros da apresentação</h3>
-           <p class="normal-text">Add fotos e vídeos do dia</p>
        
-       <h3>Feedbacks recebidos</h3>
-
+       <h3>Desenvolvimento do jogo</h3>
+           <p class="normal-text"></p>
            
    </div>
 
