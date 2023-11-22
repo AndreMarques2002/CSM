@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://raw.githubusercontent.com/AndreMarques2002/CSM/main/Capa.png');
+            background-size: cover;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin: 0;
+            padding: 0;
+        }
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px;
+            background: transparent;
+        }
+        th, td {
+            border: 1px solid white;
+            padding: 8px;
+            text-align: center;
+            background-color: transparent;
+        }
+        .audio-player {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .audio-container {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .image-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .image-container img {
+            width: 50%;
+            height: auto;
+            margin: 0 10px;
+        }
+
+        
+        .header {
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #3a9793; 
+            padding: 20px;
+            box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .logo {
+            width: 100px;
+            margin-left: -50px;
+        }
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+        .menu-item {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+        }
+        .menu-item:hover {
+            color: #006400;
+        }
+        .footer {
+            width: 100%; 
+            justify-content: center; 
+            background-color: #3a9793; 
+            text-align: center; 
+            color: white; 
+        }
+        .audio-player {
+            position: absolute; 
+            top: 150px; 
+            right: 20px; 
+        }
+        .title {
+           text-align:center; 
+           margin-top :20px; 
+           color:white; 
+       }
+       .section {
+           margin :20px; 
+           color:white; 
+       }
+       /* Estilos para o menu suspenso */
+       .dropdown {
+           position:relative; 
+           display:inline-block; 
+       }
+       .dropdown-content {
+           display:none; 
+           position:absolute; 
+           min-width :160px; 
+           box-shadow :0px 8px 16px 0px rgba(0,0,0,0.2); 
+           z-index :1; 
+           background-color :#3a9793; /* Cor de fundo igual ao do header */
+       }
+       .dropdown-content a {
+           color:white; /* Cor da fonte branca */
+           padding :12px 16px; 
+           text-decoration :none; 
+           display:block; 
+       }
+       .dropdown-content a:hover {
+           color :#006400; /* Cor verde escuro quando o cursor passa por cima */
+       }
+       .dropdown:hover .dropdown-content {
+           display:block; 
+       }
+       /* Estilo para o parágrafo com texto normal */
+       .normal-text {
+           text-transform:none; /* Remove a transformação de texto em maiúsculas */
+       }
+    </style>
+    <title>LAB 5</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/ufabc_logo.png">
+</head>
+<body>
+    <div class="header">
+        <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/ufabc_logo.png" alt="Logo UFABC" class="logo">
+        <div class="menu">
+           <a href="index.html" class="menu-item">Home</a>
+           <a href="projeto.html" class="menu-item">Projeto</a>
+           <div class="dropdown">
+               <a class="menu-item">Laboratórios</a>
+               <div class="dropdown-content">
+                   <a href="lab_2.html">Lab 2</a>
+                   <a href="exercicio_1.html">Ex 1</a>
+                   <a href="lab_3.html">Lab 3</a>
+                   <a href="lab_4.html">Lab 4</a>
+                   <a href="lab_5.html">Lab 5</a>
+                   <a href="lab_6.html">Lab 6</a>
+               </div>
+           </div>
+           <a href="quem_somos.html" class="menu-item">Quem Somos</a>
+       </div>
+   </div>
+   <div class="audio-player">
+       <audio controls>
+           <source src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/lab4_audio.mp3" type="audio/mpeg">
+       </audio>
+   </div>
+   <h1 class="title">LAB 5 - Codificação de Imagem com DWT</h1> 
+
+   <div class="section">       
+       <h2>Resultados</h2>
+           <h3>Codificação de Luminância (P&B) com DWT para a Pimentas</h3>        
+
+       <h2>Apêndice</h2>
+           <p class="normal-text">Link para notebook: <a href="https://colab.research.google.com/drive/1j_qv5zFH8FMBjUpcerjRBKS9NKqA1XPa#scrollTo=UK1_n6hlxBsL">Laboratório 5 - CSM</a></p>
+       
+       
+   </div>
+
+   <div class="footer">
+       <p>CODIFICAÇÃO DE SINAIS MULTIMÍDIA</p>
+   </div>
+</body>
+</
