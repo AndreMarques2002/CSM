@@ -11,39 +11,45 @@
             margin: 0;
             padding: 0;
         }
-        table {
-            border-collapse: collapse;
-            width: 50%;
-            margin: 20px;
-            background: transparent;
-        }
-        th, td {
-            border: 1px solid white;
-            padding: 8px;
-            text-align: center;
-            background-color: transparent;
-        }
-        .audio-player {
-            display: inline-block;
-            margin-right: 10px;
-        }
-        .audio-container {
-            display: flex;
-            gap: 10px;
-        }
-        
         .image-container {
             display: flex;
             justify-content: center;
         }
 
         .image-container img {
-            width: 50%;
+            width: 100%;
             height: auto;
-            margin: 0 10px;
+            
+        }
+        .slider {
+            width: 800px;
+            overflow: hidden;
+            position: relative;
         }
 
-        
+        .slide {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        .indicators {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: gray;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+        }
         .header {
             position: sticky;
             top: 0;
@@ -122,7 +128,7 @@
            text-transform:none; /* Remove a transformação de texto em maiúsculas */
        }
     </style>
-    <title>LAB 8</title>
+    <title>PROJETO</title>
     <link rel="icon" href="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/ufabc_logo.png">
 </head>
 <body>
@@ -144,53 +150,145 @@
                    <a href="lab_8.html">Lab 8</a>
                </div>
            </div>
-           <a href="quem_somos.html" class="menu-item">Quem Somos</a>
+           <a href="quem_somos" class="menu-item">Quem Somos</a>
        </div>
    </div>
    <div class="audio-player">
        <audio controls>
-           <source src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/lab8_audio.mp3" type="audio/mpeg">
+           <source src="audio-description.mp3" type="audio/mpeg">
+               Seu navegador não suporta o elemento de áudio.
        </audio>
    </div>
-   <h1 class="title">LAB 8 - MIDI e Resposta Impulsiva</h1> 
-
-   <div class="section">       
-       <h2>Resultados</h2>
-       <h3>Respostas impulsivas</h3>
-           <div class="image-container">
-               <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/IR_capela.png" alt="Imagem 1">
-           </div>
-       <br>
-           <div class="image-container">
-               <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/IR_sala.png" alt="Imagem 2">
-           </div>
-       <br>
-     
-
-
+   <h1 class="title">PROJETO</h1> 
+   
+   <div class="section">
+       <h2>Jogo da Memória Interdisciplinar</h2>
        
-           <h3>Resultados individuais</h3>
-               <li>André Marques da Silva: <a href="https://colab.research.google.com/drive/1rX4ffR3MyJMbIrrNsll44Lx2K80yEKs8?usp=sharing">Notebook - Lab 8</a></li>
-               <li>Guilherme Nido de Aveiro: <a href="https://colab.research.google.com/drive/1D1oB77Fcroh6GQjsDCWU_q-4lOUfFnHE?usp=sharing">Notebook - Lab 8</a></li>
-               <li>Letícia Martins: <a href="https://colab.research.google.com/drive/1i1SBVU5hReXRbeBhOByI0hTqW5NhqTw8?usp=sharing">Notebook - Lab 8</a></li>
-           <br>
+       <h3>REGISTROS DA APRESENTAÇÃO</h3>
+       
+       <div class="image-container">
+           <div class="slider">
+               <div class="slide">
+                   <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/evento_1.jpg" alt="Imagem 1">
+               </div>
+               <div class="slide">
+                   <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/evento_2.jpg" alt="Imagem 2">
+               </div>
+               <div class="slide">
+                   <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/evento_3.jpg" alt="Imagem 3">
+               </div>
+               <div class="slide">
+                   <img src="https://raw.githubusercontent.com/AndreMarques2002/CSM/main/evento_4.jpg" alt="Imagem 4">
+               </div>
+               <div class="indicators">
+                   <span class="indicator"></span>
+                   <span class="indicator"></span>
+                   <span class="indicator"></span>
+                   <span class="indicator"></span>
+               </div>
+           </div>
+       </div>
+       <script>
+       const slides = document.querySelectorAll('.slide');
+       const indicators = document.querySelectorAll('.indicator');
+       let currentSlide = 0;
+
+       function showSlide(index) {
+           slides.forEach((slide, i) => {
+               if(i === index){
+                   slide.style.display = 'block';
+               } 
+               else{
+                   slide.style.display = 'none';
+                }
+            });
+
+           indicators.forEach((indicator, i) => {
+               if (i === index) {
+                   indicator.style.background = '#3a9793';
+               } 
+               else{
+                   indicator.style.background = 'gray';
+                }
+            });
+       }
+
+       function goToSlide(index){
+           currentSlide = index;
+           showSlide(currentSlide);
+       }
+
+       function nextSlide(){
+       currentSlide = (currentSlide + 1) % slides.length;
+       showSlide(currentSlide);
+       }
+       
+       showSlide(currentSlide);
+       setInterval(nextSlide, 4000);
+
+       indicators.forEach((indicator, index) =>{
+           indicator.addEventListener('click', () =>{
+               goToSlide(index);
+            });
+        });
+       </script>
+       
+       <br>
+       
+       <div style="display: flex; justify-content: space-between;">
+           <div style="text-align: center;">
+               <video controls style="width:600px; height:400px;">
+                   <source src= "https://raw.githubusercontent.com/AndreMarques2002/CSM/main/Video_projeto.mp4" type= "video/mp4"></video>
+               <p>Apresentação no Workshop</p>
+           </div>
+       </div>
+       <br>
+       
+       <h3>Objetivos</h3>
+       <p class="normal-text">Seguindos as diretrizes da BNCC (Base Nacional Comum Curricular), o presente projeto tem como objetivo 'Experienciar a lucidade, a percepção, 
+           a expressividade e a imaginação, ressignificando espaços da escola e de fora dela no âmbito da Arte'.</p>
+       
+       <h3>Tecnologias utilizadas</h3>
+           <li>HTML</li>
+           <li>CSS</li>
+           <li>JavaScript</li>
            
-           <p class="normal-text">
-               <li>a) Apresentem as músicas de todos os integrantes do grupo, identificando quem "criou" cada uma;</li>
-               <li>b) Pesquise numa base de dados aberta como: https://www.openair.hosted.york.ac.uk/?page_id=36, e encontre três IRs de ambientes diferentes (pequeno-fechado, auditório médio, igreja grande);</li>
-               <li>c) "Criar" mais uma música (de maior duração) e "reproduzi-la" em cada ambiente, comentando as diferenças;</li>
-               <li>d) Repita o mesmo procedimento (c) para um outro .midi que desejar (da web).Comparar os espectrogramas e as taxas de compressão nos arquivos gravados (façam tabelas e as analisem!).</li>
-           </p>
-
-       
-       <h2>Apêndice</h2>
-           <p class="normal-text">Link para notebook: <a href="https://drive.google.com/file/d/1GY6AYElSREpBiHb3o9M38-E1FcOeimhM/view?usp=sharing">Laboratório 8 - CSM</a></p>
        <br>
        
+       <h3>Animação</h3> 
+           <video controls style="width: 600px; height: 400px; margin: 0 auto;">
+           <source src= "https://raw.githubusercontent.com/AndreMarques2002/CSM/main/Blender.mp4" type= "video/mp4"></video>        
+       
+       <h5><a href="https://github.com/leetmartins/CSM">Link para o github do projeto</a></h5>
+       <br>
+      
+        <h3>Desenvolvimento do jogo</h3>
+          <p class="normal-text">O jogo foi desenvolvido pelos integrantes com o intuito de aplicar os conceitos de STEAM nas salas de aulas de maneira iterativa. Para isso,
+            foi feito um jogo de memória no qual as imagens aparecem e o aluno, deverá lembrar qual é a carta que foi aberta, e clicar com o mouse sobre ela, se ele acertar, há um contador e o jogo continua,
+            se ele errar uma mensagem é mostrada na tela com as sua pontuação total e informando que o jogo chegou ao fim.</p><br>
+       
+        <h3>Feedbacks</h3>
+        <h5>Professores</h5>
+        <li class="normal-text">Ainda em desenvolvimento, precisa melhorar a apresentação, e os fundamentos do jogo. </li>
+        <li class="normal-text">Boa dedicação e apresentação. </li>
+        <li class="normal-text">Para ciclo I. </li>
+        <li class="normal-text">Funcionamento do aplicativo não funciona. </li>
+
+        <h5>Alunos</h5>        
+        <li class="normal-text">Melhorar velocidade do jogo e dificuldade. </li>
+        <li class="normal-text">Eu gostei por que é bem diferente e legal,os apresentadores do jogo são educados e gente boa. </li>
+        <li class="normal-text">Gostei bastante da ideia de trazer um jogo da memoria pois assim se diferenciaram dos outros, q ideia e a apresentacao do trabalho também foi muito boa, diria até que a melhor.</li>
+        <br>
+        
+        <h3>Análise do projeto pelos integrantes do grupo</h3>
+        <li class="normal-text">O projeto abordou o tema STEAM e está bem direcionado ao público- alvo </li>
+        <li class="normal-text">O Jogo ainda está muito ligado à tecnologia e se distanciou de multimídia. </li>
+        <li class="normal-text">Possui alguns bugs e poderia conter mais meios de multimídia, como áudios e vídeos. </li>
+        <li class="normal-text">Poderia ter uma tela inicial explicando os objetivos e tela de Game Over mais divertida e com efeitos sonoros. </li>
    </div>
 
    <div class="footer">
        <p>CODIFICAÇÃO DE SINAIS MULTIMÍDIA</p>
    </div>
 </body>
-</
+</html>
